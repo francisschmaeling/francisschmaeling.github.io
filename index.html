@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Francis Schmaeling – Teaching Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --bg-alt: #ffffff;
+      --text: #1f1f1f;
+      --muted: #777777;
+      --accent: #c76a3a;
+      --border: #ded6c9;
+      --max-width: 1100px;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-serif: "Georgia", "Times New Roman", serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 32px 0;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: var(--max-width);
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      background: transparent;
+    }
+
+    /* Sidebar */
+
+    .sidebar {
+      background: #f0e7da;
+      border-right: 1px solid var(--border);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .identity-title {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .identity-subtitle {
+      margin-top: 6px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .tagline {
+      margin-top: 18px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .button {
+      display: inline-flex;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-top: 16px;
+      background: transparent;
+    }
+
+    .button-primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .nav {
+      margin-top: 36px;
+      list-style: none;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding-left: 0;
+    }
+
+    .nav li + li {
+      margin-top: 12px;
+    }
+
+    .nav a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 3px;
+    }
+
+    .nav a:hover {
+      border-color: var(--accent);
+    }
+
+    .sidebar-footer {
+      margin-top: 24px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Main content */
+
+    .content {
+      padding: 40px 40px 60px 40px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .section-intro {
+      max-width: 60ch;
+      color: #444;
+      font-size: 15px;
+    }
+
+    .grid-two {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 2fr 1.2fr;
+      gap: 32px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      border: 1px solid var(--border);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #555;
+    }
+
+    /* Resume */
+
+    .resume-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .resume-summary {
+      margin-top: 18px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    /* Video */
+
+    .video-wrapper {
+      margin-top: 18px;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      background: #000;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Why hire me */
+
+    .why-grid {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .why-card {
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #faf6f0;
+      font-size: 13px;
+    }
+
+    .why-card h4 {
+      margin: 0 0 6px 0;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+    }
+
+    /* Experience */
+
+    .experience-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 18px;
+    }
+
+    .experience-item + .experience-item {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .exp-meta {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr;
+      gap: 24px;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .shell {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        border-bottom: 1px solid var(--border);
+      }
+      .grid-two,
+      .contact-grid,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="shell">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+
+        <div>
+          <div class="identity-title">Francis<br>Schmaeling</div>
+          <div class="identity-subtitle">English &amp; ESL Educator</div>
+
+          <p class="tagline">
+            Evidence-based instruction, calm classroom culture, and a deep love of language.
+          </p>
+
+          <button class="button button-primary" onclick="document.getElementById('resume').scrollIntoView({behavior:'smooth'})">
+            View Resume ↗
+          </button>
+
+          <ul class="nav">
+            <li><a href="#intro">Overview</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#video">Sample Lesson</a></li>
+            <li><a href="#why">Why Hire Me</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-footer">
+          Available January 2026<br><br>
+          Email: <a href="mailto:YOUR_EMAIL">YOUR_EMAIL</a><br>
+          Phone: YOUR_PHONE
+        </div>
+
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="content">
+
+        <!-- INTRO -->
+        <section id="intro" class="section">
+          <div class="section-label">Profile</div>
+          <h1 class="section-title">Teacher focused on literacy, language, and relationships.</h1>
+
+          <p class="section-intro">
+            I am an English Language Arts and Reading educator in the Dallas ISD Alternative Certification Program. 
+            I blend structured literacy, explicit vocabulary support for multilingual learners, and warm-demanding classroom culture.
+          </p>
+
+          <div class="grid-two">
+            <div>
+              <p style="color:#444;">I prioritize:</p>
+              <ul class="resume-summary">
+                <li>Clear routines and expectations from day one.</li>
+                <li>Scaffolded reading & writing with strong models.</li>
+                <li>Intentional support for Emergent Bilinguals.</li>
+                <li>Frequent checks for understanding.</li>
+              </ul>
+            </div>
+
+            <div>
+              <p><strong>Certification</strong><br>
+              ELAR 7–12 & ESL (Dallas ISD ACP)</p>
+
+              <p><strong>Education</strong><br>
+              B.A. Philosophy – University of North Texas (2023)</p>
+
+              <p><strong>Status</strong><br>
+              TExES 331 (ELAR 7–12) passed; completing fieldwork & coursework</p>
+
+              <div class="pill-row">
+                <div class="pill">ELAR 7–12</div>
+                <div class="pill">ESL</div>
+                <div class="pill">Literacy</div>
+                <div class="pill">Scaffolding</div>
+                <div class="pill">Writing</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- RESUME -->
+        <section id="resume" class="section">
+          <div class="section-label">Resume</div>
+          <h2 class="section-title">Professional Resume</h2>
+
+          <div class="resume-actions">
+            <a class="button button-primary" href="YOUR_RESUME_LINK.pdf" target="_blank">Download PDF ↗</a>
+          </div>
+
+          <div class="resume-summary">
+            <strong>Highlights:</strong>
+            <ul>
+              <li>Extensive ELAR, math, and social studies observations.</li>
+              <li>Experience teaching adult ESL (Intro B classes).</li>
+              <li>Strong analytical writing background from philosophy.</li>
+              <li>Training in research-based instruction & first-days routines.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- VIDEO -->
+        <section id="video" class="section">
+          <div class="section-label">Sample Lesson</div>
+          <h2 class="section-title">Video Lesson: Reading & Language Support</h2>
+
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" allowfullscreen></iframe>
+          </div>
+        </section>
+
+        <!-- WHY HIRE ME -->
+        <section id="why" class="section">
+          <div class="section-label">Fit for Your Campus</div>
+          <h2 class="section-title">Why I Would Be an Asset</h2>
+
+          <div class="why-grid">
+            <div class="why-card">
+              <h4>Research-Based</h4>
+              Explicit modeling, checks for understanding, and structured practice.
+            </div>
+
+            <div class="why-card">
+              <h4>Calm Culture</h4>
+              Warm-demanding expectations and predictable routines.
+            </div>
+
+            <div class="why-card">
+              <h4>Literacy-Focused</h4>
+              Strong modeling for analysis, writing, and close reading.
+            </div>
+
+            <div class="why-card">
+              <h4>EB Support</h4>
+              Vocabulary, visuals, frames, and structured discussion.
+            </div>
+
+            <div class="why-card">
+              <h4>Coachable</h4>
+              Responsive to feedback; reflective practitioner.
+            </div>
+
+            <div class="why-card">
+              <h4>Committed</h4>
+              Long-term focus on students, families, and campus growth.
+            </div>
+          </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="section">
+          <div class="section-label">Experience</div>
+          <h2 class="section-title">Experience & Training</h2>
+
+          <ul class="experience-list">
+            <li class="experience-item">
+              <strong>Dallas ISD ACP – ELAR & ESL Candidate</strong>
+              <div class="exp-meta">2025–Present</div>
+            </li>
+
+            <li class="experience-item">
+              <strong>Adult ESL Instructor</strong>
+              <div class="exp-meta">Richardson, TX — 2025</div>
+            </li>
+
+            <li class="experience-item">
+              <strong>B.A. Philosophy – University of North Texas</strong>
+              <div class="exp-meta">2023</div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section">
+          <div class="section-label">Next Steps</div>
+          <h2 class="section-title">Contact</h2>
+
+          <div class="contact-grid">
+            <div>
+              <p>I would be happy to schedule a campus visit or demo lesson.</p>
+            </div>
+
+            <div>
+              <p><strong>Email:</strong> YOUR_EMAIL</p>
+              <p><strong>Phone:</strong> YOUR_PHONE</p>
+              <p><strong>Start:</strong> January 2026</p>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener("click", e => {
+        const id = a.getAttribute("href").substring(1);
+        const el = document.getElementById(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
