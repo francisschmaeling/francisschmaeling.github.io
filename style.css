@@ -1,0 +1,215 @@
+/* style.css - Shared stylesheet for the teacher portfolio site */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    background: #ffffff;
+    color: #333333;
+    line-height: 1.6;
+}
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar {
+    background: #efe7da;
+    padding: 2rem;
+    width: 250px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+/* Sidebar Branding */
+.name {
+    font-family: 'Merriweather', serif;
+    font-size: 1.5em;
+    margin: 0 0 0.2em;
+}
+.role {
+    font-family: 'Merriweather', serif;
+    font-size: 1.1em;
+    font-style: italic;
+    margin: 0 0 1em;
+}
+.tagline {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+    color: #555555;
+    margin: 0 0 1.5em;
+}
+/* Sidebar Resume Button */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 0.5em 1em;
+}
+.resume-btn {
+    background: #c65d35;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+.resume-btn:hover {
+    background: #b55330;
+}
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+}
+.nav-links li {
+    margin: 0.5em 0;
+}
+.nav-links a {
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    color: #333333;
+}
+.nav-links a:hover {
+    text-decoration: underline;
+}
+/* Main Content */
+main {
+    flex: 1;
+    padding: 2rem;
+}
+main h2, main h3, main h4 {
+    font-family: 'Merriweather', serif;
+    color: #111111;
+}
+.section-title {
+    font-family: 'Merriweather', serif;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #555555;
+    margin: 0 0 0.5em;
+}
+/* Home Page - Profile Section */
+.profile-overview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+.profile-details {
+    flex: 1;
+}
+.profile-details .subtitle {
+    font-size: 1.5em;
+    margin: 0 0 0.5em;
+    font-family: 'Merriweather', serif;
+}
+.profile-details p {
+    margin: 0 0 1em;
+}
+.profile-details .priorities {
+    list-style: disc;
+    margin: 0 0 0 1.5em;
+}
+.priorities li {
+    margin: 0 0 0.5em 0;
+}
+/* Home Page - Quick Info Aside */
+.quick-info {
+    flex: 0 0 220px;
+    background: #f4eee3;
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+.quick-info h4 {
+    font-family: 'Merriweather', serif;
+    font-size: 1em;
+    margin: 0 0 0.3em;
+}
+.quick-info p {
+    margin: 0 0 1em;
+}
+.skills {
+    margin-top: 0.5em;
+}
+.skills span {
+    display: inline-block;
+    background: #e0d8cc;
+    color: #333333;
+    font-size: 0.8em;
+    padding: 0.2em 0.5em;
+    border-radius: 4px;
+    margin: 0 0.3em 0.3em 0;
+}
+/* Resume Page */
+.resume-section .download-btn {
+    background: #c65d35;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 0.4em 0.8em;
+}
+.resume-section .download-btn:hover {
+    background: #b55330;
+}
+.resume-section .highlights {
+    list-style: disc;
+    margin: 0 0 0 1.5em;
+}
+.highlights li {
+    margin: 0 0 0.5em 0;
+}
+/* Philosophy Page - no additional styles needed */
+/* Strategies Page */
+.strategies-list {
+    list-style: disc;
+    margin: 0 0 0 1.5em;
+}
+.strategies-list li {
+    margin: 0 0 0.5em 0;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+    }
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 1rem 0 0;
+    }
+    .nav-links li {
+        margin: 0.5em 1em;
+    }
+    main {
+        width: 100%;
+        padding: 1rem;
+    }
+    .profile-overview {
+        flex-direction: column;
+    }
+    .quick-info {
+        flex: none;
+        margin-top: 2rem;
+    }
+    .tagline {
+        display: none;
+    }
+}
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #f4eee3;
+    font-size: 0.9em;
+    color: #555555;
+    margin-top: auto;
+}
