@@ -9,19 +9,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- Color Palette & Variables --- */
+        /* --- Styles & Colors --- */
         :root {
-            --bg-color: #F8F7F4; /* Lighter, warm beige */
-            --primary-color: #2C3E50; /* Deep Navy Blue for titles/accents */
-            --text-color: #4A4A4A; /* Dark Grey for body text */
-            --heading-color: #1A1A1A; /* Near Black for main headings */
+            --bg-color: #F8F7F4; /* Warm Beige */
+            --primary-color: #2C3E50; /* Navy Blue */
+            --text-color: #4A4A4A; /* Dark Grey */
+            --heading-color: #1A1A1A; /* Black */
             --card-bg: #FFFFFF;
             --border-color: #E0E0E0;
-            --accent-highlight: #3498DB; /* Bright blue for subtle pop */
-            --resume-contrast-bg: #fcf5ef; /* Subtle orange/peach for contrast */
+            --accent-highlight: #3498DB; 
+            --resume-contrast-bg: #fcf5ef; /* Subtle Orange for Resume Page */
         }
 
-        /* --- Global Reset & Typography --- */
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
@@ -35,16 +34,16 @@
         }
 
         h1, h2, h3 {
-            font-family: 'Playfair Display', serif; 
+            font-family: 'Playfair Display', serif;
             color: var(--heading-color);
             margin-top: 0;
         }
 
         h1 { font-size: 2.5rem; }
 
-        /* --- Navigation Bar (Horizontal Line) --- */
+        /* --- Navigation Bar --- */
         nav {
-            background-color: var(--card-bg); 
+            background-color: var(--card-bg);
             border-bottom: 1px solid var(--border-color);
             padding: 1rem 0;
             position: sticky;
@@ -96,7 +95,6 @@
             box-sizing: border-box;
         }
         
-        /* Main Section Card Style */
         .page-card {
             background: var(--card-bg);
             padding: 50px;
@@ -105,26 +103,7 @@
             min-height: 70vh;
         }
 
-        /* RESUME PAGE Specific Styling */
-        #resume .page-card {
-            background: var(--resume-contrast-bg); 
-            display: flex; 
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        
-        /* Resume Image Styling */
-        .resume-img {
-            width: 100%;
-            max-width: 850px; /* Limits width so it doesn't get too huge on big screens */
-            height: auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Shadow to pop off the page */
-            border-radius: 4px;
-            margin-top: 20px;
-        }
-
+        /* --- Section Toggles --- */
         .page-section {
             display: none;
             animation: fadeIn 0.5s ease-in-out;
@@ -139,7 +118,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- Home Page Specifics --- */
+        /* --- Home Page Styling --- */
         #home .page-card {
             text-align: center;
             padding: 80px 50px;
@@ -208,6 +187,55 @@
             color: var(--text-color);
         }
 
+        /* --- Resume Page Styling --- */
+        #resume .page-card {
+            background: var(--resume-contrast-bg); /* Subtle Orange */
+        }
+
+        .pdf-link-container {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 30px;
+        }
+
+        .pdf-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.1s;
+            display: inline-block;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .pdf-btn:hover {
+            background-color: var(--accent-highlight);
+            transform: translateY(-1px);
+        }
+
+        .resume-content {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .resume-section-title { 
+            font-size: 1.15rem; 
+            text-transform: uppercase; 
+            border-bottom: 2px solid var(--accent-highlight); 
+            padding-bottom: 5px; 
+            margin-top: 35px; 
+            margin-bottom: 15px; 
+            font-weight: 700; 
+            font-family: 'Inter', sans-serif;
+            color: var(--primary-color);
+        }
+
+        .job-block { margin-bottom: 25px; }
+
         /* --- Footer Styling --- */
         footer {
             background-color: var(--primary-color);
@@ -218,11 +246,6 @@
             margin-top: 40px;
         }
         
-        footer p {
-            margin: 5px 0;
-            letter-spacing: 0.5px;
-        }
-
         footer a {
             color: #dcdcdc;
             text-decoration: none;
@@ -342,10 +365,79 @@
 
         <section id="resume" class="page-section">
             <div class="page-card">
-                <h1 style="margin-bottom: 20px;">Curriculum Vitae</h1>
-                <p style="margin-bottom: 30px; font-style:italic;">Detailed employment history, education, and certifications.</p>
-                
-                <img src="Francis Schmaeling Resume 12-6-25 copy-1.png" alt="Francis Schmaeling Resume" class="resume-img">
+                <div class="pdf-link-container">
+                    <h1 style="margin-bottom: 10px;">Francis Schmaeling Jr.</h1>
+                    <p style="font-size: 1.1rem; color: var(--primary-color);">Click below to download the official PDF.</p>
+                    <a href="Francis Schmaeling Resume 12-6-25.pdf" target="_blank" class="pdf-btn">Download PDF Resume</a>
+                </div>
+
+                <div class="resume-content">
+                    <div class="resume-section-title">Summary</div>
+                    <p>Dallas ISD Alternative Certification Secondary English and Language Arts candidate with 2 years of professional experience working in the private sector seeking employment opportunity to transition into a career in Education. Driven towards preparing and managing an effective and engaging environment that facilitates learning for each student.</p>
+
+                    <div class="resume-section-title">Education & Certifications</div>
+                    
+                    <div class="job-block">
+                        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 1.05rem;">
+                            <span>Dallas ISD Alternative Certification Program</span>
+                            <span>September 2025 - Present</span>
+                        </div>
+                        <div style="font-style: italic; color: #555;">ELAR 7-12 and ESL Candidate | Dallas, TX</div>
+                        <ul style="padding-left: 20px; font-size: 0.95rem;">
+                            <li>Admitted to a selective, district-funded Alternative Certification Program with full tuition covered by Dallas ISD.</li>
+                            <li>Completed over 50+ hours of targeted classroom observations, gaining practical experience and observing inclusive, differentiated practices.</li>
+                            <li>Applied research-based instructional and classroom-management strategies in supervised, real-world settings.</li>
+                            <li><strong>Exams Passed:</strong> TEXES 331-ELAR 7-12 | TEXES 154-ESL Supplemental.</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-block">
+                        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 1.05rem;">
+                            <span>University of North Texas</span>
+                            <span>August 2020-May 2023</span>
+                        </div>
+                        <div style="font-style: italic; color: #555;">Bachelor of Arts in Philosophy, Minor in History | Denton, TX</div>
+                        <ul style="padding-left: 20px; font-size: 0.95rem;">
+                            <li>GPA: 3.46/4.00 | Academic Honors: 4.0 Honor Roll (Spring 2023); Dean's List (Fall 2021).</li>
+                            <li>Developed strong verbal communication skills through coursework in logic, ethics, and philosophy of language.</li>
+                            <li>Recipient of Covid-19 Student Success Award for academic resilience and adaptability.</li>
+                        </ul>
+                    </div>
+
+                    <div class="resume-section-title">Professional Experience</div>
+
+                    <div class="job-block">
+                        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 1.05rem;">
+                            <span>Sevideca, Inc.</span>
+                            <span>June 2023-April 2025</span>
+                        </div>
+                        <div style="font-style: italic; color: #555;">Co-Founder & Chief Operating Officer | Lewisville, TX</div>
+                        <ul style="padding-left: 20px; font-size: 0.95rem;">
+                            <li>Launched and led a cybersecurity start-up with a focus on secure video conferencing and endpoint protection.</li>
+                            <li>Set project goals and created calendar-based timelines to ensure consistent progress and completion of strategic priorities.</li>
+                            <li>Delivered virtual presentations up to eight times per week, demonstrating strong public speaking and instructional communication.</li>
+                        </ul>
+                    </div>
+
+                    <div class="resume-section-title">Volunteer Experience</div>
+                    
+                    <div class="job-block">
+                        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 1.05rem;">
+                            <span>Richardson Adult Literacy Center</span>
+                            <span>January 2025- Present</span>
+                        </div>
+                        <div style="font-style: italic; color: #555;">ESL Volunteer Teacher | Richardson, TX</div>
+                        <ul style="padding-left: 20px; font-size: 0.95rem;">
+                            <li>Design and teach weekly two-hour long English lessons for a class of 14 adult learners, focusing on speaking, listening, grammar, and real-life communication.</li>
+                            <li>Differentiate instruction to meet the varying needs of English language learners from diverse cultural and ethnic backgrounds.</li>
+                            <li>Create a welcoming and inclusive classroom environment that encourages student participation and growth.</li>
+                        </ul>
+                    </div>
+
+                    <div class="resume-section-title">Skills & Interests</div>
+                    <p><strong>Skills:</strong> Microsoft Office, Zoom, Canva, Google Classroom, Pearson English Connect, Lesson Planning.</p>
+                    <p><strong>Interests:</strong> Hiking, Creative Writing, Teaching, Dallas Sports Teams, Golf, Philosophy.</p>
+                </div>
             </div>
         </section>
 
