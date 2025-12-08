@@ -105,14 +105,24 @@
             min-height: 70vh;
         }
 
-        /* RESUME PAGE Specific Color Change */
+        /* RESUME PAGE Specific Styling */
         #resume .page-card {
             background: var(--resume-contrast-bg); 
-            display: flex; /* Centers content vertically */
+            display: flex; 
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+        }
+        
+        /* Resume Image Styling */
+        .resume-img {
+            width: 100%;
+            max-width: 850px; /* Limits width so it doesn't get too huge on big screens */
+            height: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Shadow to pop off the page */
+            border-radius: 4px;
+            margin-top: 20px;
         }
 
         .page-section {
@@ -148,7 +158,7 @@
             font-weight: 300;
         }
 
-        /* Asset Grid from Screenshot */
+        /* Asset Grid */
         .asset-header {
             text-transform: uppercase;
             font-size: 0.9rem;
@@ -198,30 +208,30 @@
             color: var(--text-color);
         }
 
-        /* --- Resume PDF Link Styling --- */
-        .pdf-link-container {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-
-        .pdf-btn {
+        /* --- Footer Styling --- */
+        footer {
             background-color: var(--primary-color);
             color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: background 0.3s, transform 0.1s;
-            display: inline-block;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            font-size: 1rem;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.95rem;
+            margin-top: 40px;
+        }
+        
+        footer p {
+            margin: 5px 0;
+            letter-spacing: 0.5px;
         }
 
-        .pdf-btn:hover {
-            background-color: var(--accent-highlight);
-            transform: translateY(-1px);
+        footer a {
+            color: #dcdcdc;
+            text-decoration: none;
+            border-bottom: 1px dotted #aaa;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: white;
         }
 
         /* --- Embed Containers --- */
@@ -244,7 +254,6 @@
             border: 0;
         }
         
-        /* Specific height for Google Slides (Adjusted for better fit) */
         #lesson .video-container:last-of-type {
              padding-bottom: 75%; 
         }
@@ -333,14 +342,10 @@
 
         <section id="resume" class="page-section">
             <div class="page-card">
-                <div class="pdf-link-container">
-                    <h1 style="margin-bottom: 10px;">Francis Schmaeling Jr. Resume</h1>
-                    <p style="font-size: 1.1rem; color: var(--primary-color); max-width: 600px; margin: 0 auto 20px;">
-                        The full, professionally formatted resume is available for viewing and download below. 
-                        It contains all detailed employment, education, and certification information required for review.
-                    </p>
-                    <a href="Francis Schmaeling Resume 12-6-25.pdf" target="_blank" class="pdf-btn">View/Download PDF Resume</a>
-                </div>
+                <h1 style="margin-bottom: 20px;">Curriculum Vitae</h1>
+                <p style="margin-bottom: 30px; font-style:italic;">Detailed employment history, education, and certifications.</p>
+                
+                <img src="Francis Schmaeling Resume 12-6-25 copy-1.png" alt="Francis Schmaeling Resume" class="resume-img">
             </div>
         </section>
 
@@ -399,6 +404,18 @@
         </section>
 
     </div>
+
+    <footer>
+        <p style="font-weight: bold; font-size: 1.1rem;">Francis Schmaeling Jr.</p>
+        <p>
+            <a href="mailto:schmaelingfrancis@gmail.com">schmaelingfrancis@gmail.com</a>
+            <span style="margin: 0 10px;">|</span>
+            <a href="tel:9145254357">914-525-4357</a>
+        </p>
+        <p style="font-size: 0.8rem; margin-top: 15px; color: #aaa;">
+            &copy; 2025 Francis Schmaeling Jr. | Built for Educational Leadership Review
+        </p>
+    </footer>
 
     <script>
         function showPage(pageId) {
